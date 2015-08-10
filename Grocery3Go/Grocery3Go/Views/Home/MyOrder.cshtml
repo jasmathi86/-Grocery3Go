@@ -1,0 +1,22 @@
+﻿@model Grocery3Go.Models.Views.MyOrderViewModel
+@{
+    ViewBag.Title = "MyOrder";
+}
+
+<h2>MyOrder</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    @*Loops through local Shopping Cart List*@
+    @foreach (var item in Model.ShoppingCartList)
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>@item.Quantity</td>
+            <td>@Html.ActionLink("Delete", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId })</td>
+        </tr>
+    }
+</table>

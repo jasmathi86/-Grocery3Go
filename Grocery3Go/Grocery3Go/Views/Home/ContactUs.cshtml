@@ -1,0 +1,121 @@
+﻿@model Grocery3Go.Models.EmailFormModel
+
+@{
+    ViewBag.Title = "ContactUs";
+}
+
+<h2>@ViewBag.Title</h2>
+<span>
+
+    We are open 24/7.
+
+</span>
+
+@using (Html.BeginForm("ContactUs", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Send your comment</h4>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FromName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FromEmail)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Message)
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Send" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+<br />
+<br />
+
+
+
+@*<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                </div>
+            <form role="form" action="" method="post">
+                <div class="col-lg-6">
+                    <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>
+                    <div class="form-group">
+                        <label for="InputName">Your Name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputEmail">Your Email</label>
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputMessage">Message</label>
+                        <div class="input-group">
+                            <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputReal" id="InputReal" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+                </div>
+            </form>
+            <hr class="featurette-divider hidden-lg">
+            <div class="col-lg-5 col-md-push-1">
+                <h3>Office Location</h3>
+                <address>
+
+                    <p class="lead">
+                        <a href="https://www.google.com/maps/preview?ie=UTF-8&q=The+Pentagon&fb=1&gl=us&hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&cid=12647181945379443503&ei=qmYfU4H8LoL2oATa0IHIBg&ved=0CKwBEPwSMAo&safe=on">
+                            Grocery 2 Go<br>
+                            111 Smith street
+                            Chicago, IL 60290
+                        </a><br>
+                        <p>Phone: 800-555-1212</p>
+                        <p>Fax: 800-555-1213</p>
+                        <p>E-mail: SamSmith@Grocery2Go.com</p>
+
+
+                </address>
+            </div>
+        </div>
+
+    </div>*@
