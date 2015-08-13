@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 <body>
-    <h2>CornerStore</h2>
+    <h2>Our Products</h2>
     <table class="table">
 
         <tr>
@@ -15,35 +15,27 @@
         {
             <tr>
                 <td>@item.Name</td>
-                <td>@item.Price</td>
-                <td>@Html.ActionLink("Add", "AddToCart", new { productId = item.ProductId })</td>
+                <td>@item.Price.ToString("C")</td>
+                <td>@Html.ActionLink("Add To Cart", "AddToCart", new { productId = item.ProductId })</td>
             </tr>
         }
 
-        <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Action</th>
-        </tr>
+
         @*Loops through local Shopping Cart List
-        @foreach (var item in Model.ShoppingCartList)
-        {
-            <tr>
-                <td>@item.Product.Name</td>
-                <td>@item.Quantity</td>
-                <td>@Html.ActionLink("Delete", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId })</td>
-            </tr>
-        }*@
-        <tr>
-            <td>@Html.ActionLink("ShoppingCart", "MyCart")  : @Model.ShoppingCartList.Count</td>
-        </tr>
-
-
-
-
+            @foreach (var item in Model.ShoppingCartList)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@Html.ActionLink("Delete", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId })</td>
+                </tr>
+            }*@
     </table>
 
 
 
-    <p>@Html.ActionLink("Purchase", "CreateOrder", new { shoppingCartId = Model.User.ShoppingCartId })</p>
+    <p>@Html.ActionLink("Check Out", "CreateOrder", new { shoppingCartId = Model.User.ShoppingCartId })</p>
+    
+        
+     
 </body>

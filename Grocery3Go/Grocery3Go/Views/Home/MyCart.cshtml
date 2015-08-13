@@ -3,12 +3,13 @@
     ViewBag.Title = "MyCart";
 }
 
-<h2>MyCart</h2>
+<h2>My Cart</h2>
 <table class="table table-striped">
     <tr>
         <th>Name</th>
         <th>Quantity</th>
-        <th>Action</th>
+        <th>Remove Item</th>
+       
     </tr>
     @*Loops through local Shopping Cart List*@
         @foreach (var item in Model.ShoppingCartList)
@@ -17,6 +18,13 @@
                 <td>@item.Product.Name</td>
                 <td>@item.Quantity</td>
                 <td>@Html.ActionLink("Delete", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId })</td>
+                
+             
             </tr>
         }
+
 </table>
+
+
+
+

@@ -78,7 +78,7 @@ namespace Grocery3Go.Controllers
 
             _db.SaveChanges();
 
-
+            CartCacheService.UpdateCartCount(user.Id, 1);
 
             return Redirect("Index");
 
@@ -204,14 +204,17 @@ namespace Grocery3Go.Controllers
 
             _db.SaveChanges();
 
+            CartCacheService.UpdateCartCount(user.Id, -1);
+
             return Redirect("Index");
 
         }
         
 
-
         // GET: Groceries/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditFromCart(int shoppingCartItemid)
+
+
         {
             return View();
         }
