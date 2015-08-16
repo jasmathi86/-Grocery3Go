@@ -7,7 +7,7 @@
 <table class="table table-striped">
     <tr>
         <th>Name</th>
-        <th>Quantity</th>
+        <th>Price</th>
         <th>Action</th>
     </tr>
     @*Loops through local Shopping Cart List*@
@@ -15,8 +15,9 @@
     {
         <tr>
             <td>@item.Product.Name</td>
-            <td>@item.Quantity</td>
-            <td>@Html.ActionLink("Delete", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId })</td>
+            <td>@item.Product.Price.ToString("C")</td>
+            <td>@Html.ActionLink("Remove Item", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId })</td>
         </tr>
     }
 </table>
+<h2>Your total is : @Model.Total.ToString("C")</h2>

@@ -10,5 +10,7 @@ namespace Grocery3Go.Models.Views
         public ICollection<ShoppingCartItem> ShoppingCartList { get; set; }
 
         public ShoppingCart ShoppingCart { get; set; }
+
+        public decimal Total { get; set; }
     }
 }

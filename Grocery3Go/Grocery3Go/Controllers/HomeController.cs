@@ -40,7 +40,8 @@ namespace Grocery3Go.Controllers
            {
                ProductsViewModel pVm = new ProductsViewModel()
                {
-                   ShoppingCartList = _db.Users.Where(m => m.UserName == User.Identity.Name).Include(m => m.ShoppingCart.ShoppingCartList).FirstOrDefault().ShoppingCart.ShoppingCartList
+                   ShoppingCartList = _db.Users.Where(m => m.UserName == User.Identity.Name).Include(m => m.ShoppingCart.ShoppingCartList).FirstOrDefault().ShoppingCart.ShoppingCartList,
+                   User = _db.Users.Where(m => m.UserName == User.Identity.Name).FirstOrDefault()
                };
                return View(pVm);
            }
@@ -132,12 +133,17 @@ namespace Grocery3Go.Controllers
             var order1 = _db.Orders.Where(m => m.UserId == user1).FirstOrDefault();
 
             var orderItem1 = _db.OrderItems.Where(m => m.OrderId == order1.OrderId).Include(m => m.ShoppingCartList).FirstOrDefault();
-
-
+            decimal total = 0.00m;
+            var Ttotal = new decimal();
+            foreach (var item in user.ShoppingCart.ShoppingCartList)
+	{
+            Ttotal += item.Product.Price;
+	};
 
             var vm = new MyOrderViewModel
             {
-                ShoppingCartList = user.ShoppingCart.ShoppingCartList
+                ShoppingCartList = user.ShoppingCart.ShoppingCartList,
+                Total = Ttotal
             };
             return View(vm);
         }
