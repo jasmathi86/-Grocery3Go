@@ -20,6 +20,10 @@ namespace Grocery3Go
 
         public static int GetUserCartCount(string userId)
         {
+
+            //Catches Here
+            //Issue's where no User is currently Logged In?
+
             if (_cache.UserShoppingCartCounts.ContainsKey(userId))
                 return _cache.UserShoppingCartCounts[userId];
             else

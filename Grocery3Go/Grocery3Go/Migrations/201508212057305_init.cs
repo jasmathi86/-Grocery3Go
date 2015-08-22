@@ -3,7 +3,7 @@ namespace Grocery3Go.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init1 : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -123,6 +123,7 @@ namespace Grocery3Go.Migrations
                         ProductId = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        ImgUrl = c.String(),
                     })
                 .PrimaryKey(t => t.ProductId);
             
