@@ -259,6 +259,7 @@
     <Content Include="Content\bootswatch\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\bootswatch\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\2go.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

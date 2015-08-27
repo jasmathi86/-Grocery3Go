@@ -1,8 +1,20 @@
-﻿body {
-    background-color: darkslategrey;
+﻿body{
+    margin-top: 70px;
+   background-color: #8AC53F;
+}
+
+body.home {
+    background: url(http://peacefulwarriors.net/wp-content/uploads/2015/05/o-GROCERY-STORE-facebook.jpg) no-repeat center center fixed;
+    background-size: cover;
     padding-top: 50px;
     padding-bottom: 20px;
 }
+
+.jumbotron{
+    background-color:rgba(28, 30, 34, 0.59) ;
+    padding: 30px;
+}
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {

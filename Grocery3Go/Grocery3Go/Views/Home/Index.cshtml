@@ -4,9 +4,9 @@
 }
 <body>
     <h2>Our Products</h2>
-    <table class="table">
+    <table class="table table-bordered">
 
-        <tr>
+        <tr style="background-color: lightgray;">
             <th>Name</th>
             <th>Image</th>
             <th>Price</th>
@@ -14,15 +14,18 @@
         </tr>
         @foreach (var item in Model.Products)
         {
-            <tr>
-                <td>@item.Name</td>
+ 
+            <tr style="background-color: white;">
+                <td><h4>@item.Name</h4></td>
                 <td><img src="@item.ImgUrl"/></td>
-                <td>@item.Price.ToString("C")</td>
-                <td>@Html.ActionLink("Add To Cart", "AddToCart", new { productId = item.ProductId })</td>
+                <td><h4 style="font-weight:700;">@item.Price.ToString("C")</h4></td>
+                <td>@Html.ActionLink("Add To Cart", "AddToCart", new { productId = item.ProductId}, new { @class = "btn btn-warning" })</td>
 
             </tr>
+            
+            
         }
-
+        
 
         @*Loops through local Shopping Cart List
             @foreach (var item in Model.ShoppingCartList)

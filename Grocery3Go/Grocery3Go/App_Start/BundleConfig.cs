@@ -25,7 +25,7 @@ namespace Grocery3Go
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/StyleSheet.css",      
-                        "~/Content/bootswatch/slate/bootstrap.css",
+                        "~/Content/bootswatch/flatly/bootstrap.css",
                         //"~/Content/bootstrap.css",
                         "~/Content/site.css"));
                         

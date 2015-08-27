@@ -24,11 +24,11 @@
                     <li>@Html.ActionLink("About", "AboutUs", "Home")</li>
                     <li>@Html.ActionLink("Inventory", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "ContactUs", "Home")</li>
-                    
-                        <li>@Html.ActionLink(" - " + CartCacheService.GetUserCartCount(User.Identity.GetUserId()), "MyCart", "Home", new { @class = "glyphicon glyphicon-shopping-cart" })</li>
-                    
+
+                    <li>@Html.ActionLink(" - " + CartCacheService.GetUserCartCount(User.Identity.GetUserId()), "MyCart", "Home", new { @class = "glyphicon glyphicon-shopping-cart" })</li>
+
                 </ul>
-            
+
 
                 @Html.Partial("_LoginPartial")
             </div>
@@ -36,9 +36,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
         <footer>
-            <p>&copy; @DateTime.Now.Year  Grocery 2 Go</p>
+            <p class="text-center" style="color: #fff;">&copy; @DateTime.Now.Year  Grocery 2 Go</p>
         </footer>
     </div>
 
