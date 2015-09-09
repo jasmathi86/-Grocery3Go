@@ -16,8 +16,10 @@
         <tr>
             <td>@item.Product.Name</td>
             <td>@item.Product.Price.ToString("C")</td>
-            <td>@Html.ActionLink("Remove Item", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId })</td>
+            <td>@Html.ActionLink("Remove Item", "DeleteFromCart", new { shoppingCartItemId = item.ShoppingCartItemId }, new { @class = "btn btn-danger" })</td>
         </tr>
     }
 </table>
 <h2>Your order total is : @Model.Total.ToString("C")</h2>
+
+

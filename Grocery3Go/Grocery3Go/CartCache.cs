@@ -24,16 +24,16 @@ namespace Grocery3Go
             //Catches Here
             //Issue's where no User is currently Logged In?
 
-            if (_cache.UserShoppingCartCounts.ContainsKey(userId))
-                return _cache.UserShoppingCartCounts[userId];
-            else
+            //if (_cache.UserShoppingCartCounts.ContainsKey(userId))
+            //    return _cache.UserShoppingCartCounts[userId];
+            //else
             {
                 int shoppingCartCount = 0;
 
                 using (ApplicationDbContext db = new ApplicationDbContext())
                 {
                     shoppingCartCount = db.Users.Where(u => u.Id == userId).Select(u => u.ShoppingCart.ShoppingCartList.Count).FirstOrDefault();
-                    _cache.UserShoppingCartCounts.Add(userId, shoppingCartCount);
+                    //_cache.UserShoppingCartCounts.Add(userId, shoppingCartCount);
                 }
 
                 return shoppingCartCount;

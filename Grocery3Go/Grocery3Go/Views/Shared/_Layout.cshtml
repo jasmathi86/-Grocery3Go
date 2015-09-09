@@ -25,7 +25,7 @@
                     <li>@Html.ActionLink("Inventory", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "ContactUs", "Home")</li>
 
-                    <li>@Html.ActionLink(" - " + CartCacheService.GetUserCartCount(User.Identity.GetUserId()), "MyCart", "Home", new { @class = "glyphicon glyphicon-shopping-cart" })</li>
+                    <li>@Html.ActionLink("-", "MyCart", "Home", new { @class = "glyphicon glyphicon-shopping-cart" })</li>
 
                 </ul>
 
